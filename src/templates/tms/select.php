@@ -4,7 +4,7 @@
 <div class="pool_list">
   <?php
   if ($pool_directory = opendir($page_configuration['directory_configurations'])) {
-    $pool_list = listFiles($pool_directory, array('.', '..'));
+    $pool_list = listFiles($pool_directory, array('.', '..', '_UNUSED'));
     foreach ($pool_list as $pool_config) {
       $pool_directory_path = $page_configuration['directory_configurations'].'/'.$pool_config;
       if (is_dir($pool_directory_path)) {
