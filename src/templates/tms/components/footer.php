@@ -19,7 +19,7 @@
     <div class="footer_content_right">
     <?php } ?>
       <div>
-        <a href="https://github.com/zdzieblowski/foundation-v2-frontend" target="_blank"><img src="common/assets/github.svg" height="24" alt></a>
+        <a href="https://github.com/enzyme42/themining.site" target="_blank"><img src="common/assets/github.svg" height="24" alt></a>
       </div>
     </div>
   </div>
