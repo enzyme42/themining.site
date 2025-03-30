@@ -38,9 +38,13 @@ $payments_current = getData('http://'.$pool_configuration['ip'].':'.$pool_config
         <div class="wrap bg_vlight">
           <div class="list_wrap gap_small">
             <?php
+            $count = 0;
             foreach ($payments_current as $payment) {
               if ($payment['transaction'] == $transaction['transaction']) {
-                ?>
+                if ($count > 0) { ?>
+                  <hr class="hr_inner hr_wrap hr_wlist">
+                <?php
+                }?>
                 <div class="box_small_long_content bg_dark">
                   <div>Miner</div>
                   <div class="text_heavy text_right"><?php echo privacyFilter($payment['miner']); ?></div>
@@ -60,10 +64,8 @@ $payments_current = getData('http://'.$pool_configuration['ip'].':'.$pool_config
                     <?php debugData($payment['amount'], $page_configuration['debug_mode']); ?>
                   </div>
                 </div>
-                <?php if ($payment != end($payments_current)) { ?>
-                  <hr class="hr_inner hr_wrap hr_wlist">
-                  <?php
-                }
+<?php
+                $count = $count + 1;
               }
             }
             ?>
