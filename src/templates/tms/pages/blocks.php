@@ -85,9 +85,14 @@ $rounds_combined = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
               <div id="<?php echo $block['round']; ?>" class="hidden">
                 <div class="list_wrap gap_small">
                   <?php
+                  $count = 0;
                   foreach ($rounds_combined as $round) {
                     if ($round['round'] == $block['round']) {
-                      ?>
+                      if ($count > 0) { ?>
+                        <hr class="hr_inner hr_wrap hr_wlist">
+                        <?php
+                      }?>
+
                       <div class="list_wrap gap_small">
                         <div class="box_small_long_content bg_light">
                           <div>Worker</div>
@@ -120,10 +125,8 @@ $rounds_combined = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
                           </div>
                         </div>
                       </div>
-                      <?php if ($round != end($rounds_combined)) { ?>
-                        <hr class="hr_inner hr_wrap hr_wlist">
                         <?php
-                      }
+                      $count = $count + 1;
                     }
                   }
                   ?>
