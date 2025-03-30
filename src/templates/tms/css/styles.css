@@ -162,7 +162,7 @@ html {
   align-items: center;
 }
 
-.box_debug {
+code {
   color: var(--color-4);
   background-color: var(--color-13);
   padding: var(--padding-normal);
@@ -194,8 +194,8 @@ html {
   align-items: center;
 }
 
-.box_small .box_debug,
-.box_small_long_content .box_debug {
+.box_small code,
+.box_small_long_content code {
   grid-column: span 2;
 }
 
@@ -775,7 +775,7 @@ a.header_navi_item:active {
     text-align: right;
   }
 
-  .box_debug {
+  code {
     grid-column: span 2;
   }
 
